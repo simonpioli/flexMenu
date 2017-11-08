@@ -88,7 +88,7 @@
 				// Add class if popupClass option is set
 				$popup.addClass(s.popupClass);
 				// Move all list items after the first to this new popup ul
-        for (i = numItems; i > 1; i--) {
+				for (i = numItems; i > 1; i--) {
 					// Find all of the list items that have been pushed below the first item. Put those items into the popup menu. Put one additional item into the popup menu to cover situations where the last item is shorter than the "more" text.
 					$lastChild = $this.find('> li:last-child');
 					keepLooking = (needsMenu($lastChild));
@@ -148,6 +148,7 @@
 				$menu.remove();
 				$this.find('> li.flexMenu-viewMore').remove();
 			}
+			$(window).trigger('flexMenuComplete');
 		});
 	};
 }));
